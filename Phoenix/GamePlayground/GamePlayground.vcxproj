@@ -44,12 +44,22 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\Third-party\boost\include;$(ProjectDir)..\..\..\Third-party\SFML-2.2\include;$(ProjectDir)..\..\..\Third-party\Box2D\include;$(OutDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Phoenix.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\Documents\Programming\C++\Phoenix\Phoenix\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Phoenix.lib;Box2D.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;sfml-network-d.lib;sfml-window-d.lib;sfml-system-d.lib;winmm.lib;ws2_32.lib;gdi32.lib;sndfile.lib;freetype.lib;glew.lib;jpeg.lib;openal32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(ProjectDir)..\..\..\Third-party\boost\lib;$(ProjectDir)..\..\..\Third-party\SFML-2.2\lib;$(ProjectDir)..\..\..\Third-party\Box2D\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>RMDIR "$(OutDir)Images\" /S /Q
+RMDIR "$(OutDir)Levels\" /S /Q
+RMDIR "$(OutDir)Fonts\" /S /Q
+xcopy  "$(ProjectDir)Images "  "$(OutDir)Images\" /s/h/e/k/f/c
+xcopy  "$(ProjectDir)Levels "  "$(OutDir)Levels \" /s/h/e/k/f/c
+xcopy  "$(ProjectDir)Fonts "  "$(OutDir)Fonts \" /s/h/e/k/f/c</Command>
+      <Message>Removes the old level and images folders and adds the new</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -58,17 +68,26 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\Third-party\boost\include;$(ProjectDir)..\..\..\Third-party\SFML-2.2\include;$(ProjectDir)..\..\..\Third-party\Box2D\include;$(OutDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Phoenix.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\Documents\Programming\C++\Phoenix\Phoenix\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Phoenix.lib;Box2D.lib;sfml-audio.lib;sfml-graphics.lib;sfml-main.lib;sfml-network.lib;sfml-window.lib;sfml-system.lib;winmm.lib;ws2_32.lib;gdi32.lib;sndfile.lib;freetype.lib;glew.lib;jpeg.lib;openal32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\Documents\Programming\C++\Phoenix\Phoenix\Debug;$(ProjectDir)..\..\..\Third-party\boost\lib;$(ProjectDir)..\..\..\Third-party\SFML-2.2\lib;$(ProjectDir)..\..\..\Third-party\Box2D\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlaygroundGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Box.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlaygroundGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Phoenix\Phoenix.vcxproj">
