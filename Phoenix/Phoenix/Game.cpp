@@ -6,11 +6,12 @@
 */
 
 #include "Game.h"
-
+#include "testClass.h"
 namespace Phoenix
 {
 	Game::Game(int width, int height, int colordepth, int target_fps, bool vSync, std::string windowName, float gravityX, float gravityY) : window(sf::VideoMode(width, height, colordepth), windowName), scene(gravityX, gravityY)
 	{
+		testClass tst(scene.getWorld());
 		run = true;
 		//initiates the window and sets targetFPS and vSync
 		window.setFramerateLimit(target_fps);
@@ -52,7 +53,13 @@ namespace Phoenix
 	{
 	}
 	void Game::Update(float deltatime){
-		scene.Update(deltatime);
+		//if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		//{
+		//	boxhell.push_back(new Box(scene, window.mapPixelToCoords(sf::Mouse::getPosition(window)).x,
+		//		window.mapPixelToCoords(sf::Mouse::getPosition(window)).y,
+		//		50, 50));
+		//}
+		//scene.Update(deltatime);
 	}
 	void Game::Draw()
 	{
@@ -60,6 +67,7 @@ namespace Phoenix
 	}
 	void Game::WindowEvent(sf::Event ev)
 	{
+
 		switch (ev.type)
 		{
 		case sf::Event::Closed:

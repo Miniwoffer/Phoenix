@@ -45,6 +45,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\Third-party\boost\include;$(ProjectDir)..\..\..\Third-party\SFML-2.2\include;$(ProjectDir)..\..\..\Third-party\Box2D\include;$(OutDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -60,6 +61,9 @@ xcopy  "$(ProjectDir)Levels "  "$(OutDir)Levels \" /s/h/e/k/f/c
 xcopy  "$(ProjectDir)Fonts "  "$(OutDir)Fonts \" /s/h/e/k/f/c</Command>
       <Message>Removes the old level and images folders and adds the new</Message>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -83,16 +87,13 @@ xcopy  "$(ProjectDir)Fonts "  "$(OutDir)Fonts \" /s/h/e/k/f/c</Command>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlaygroundGame.cpp" />
+    <ClCompile Include="testClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlaygroundGame.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Phoenix\Phoenix.vcxproj">
-      <Project>{5b88d716-4ac3-43f8-8bc9-f093856bf23f}</Project>
-    </ProjectReference>
+    <ClInclude Include="testClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

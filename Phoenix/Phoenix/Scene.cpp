@@ -20,19 +20,16 @@ Scene::Scene(float gravX,float gravY) {
 }
 
 Scene::~Scene() {
+	// TODO add destruction for box2d, so there is no memory leak when chaning levels
 	delete world;
 }
-void Scene::addGraphics(sf::Drawable& object, GraphicsLocation location)
+void Scene::addGraphics(sf::Drawable& object)
 {
 	graphics.push_back(&object);
 }
-void Scene::addGUIGraphics(sf::Drawable& object, GraphicsLocation location)
+void Scene::addGUIGraphics(sf::Drawable& object)
 {
 	GUIgraphics.push_back(&object);
-}
-void Scene::addDebugGraphics(sf::Drawable& object, GraphicsLocation location)
-{
-	Debuggraphics.push_back(&object);
 }
 void Scene::addGameObjects(GameObject& object, AddType location)
 {
@@ -42,6 +39,10 @@ void Scene::addGameObjects(GameObject& object, AddType location)
 b2Body* Scene::addPhysics(b2BodyDef object, AddType location)
 {
 	return (world->CreateBody(&object));
+}
+b2World* Scene::getWorld()
+{
+	return world;
 }
 void Scene::Draw(sf::RenderWindow& window,sf::View view)
 {

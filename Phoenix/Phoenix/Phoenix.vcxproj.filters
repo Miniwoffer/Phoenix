@@ -36,6 +36,9 @@
     <ClCompile Include="Convertion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="xml_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

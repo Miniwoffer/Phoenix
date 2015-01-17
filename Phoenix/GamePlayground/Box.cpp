@@ -19,11 +19,13 @@ Box::Box(Phoenix::Scene& scene,float x, float y, float sizeX, float sizeY): rect
 	b2Vec2 sizeboxsim = Phoenix::sTOb(sizeX / 2, sizeY / 2);
 	b2PolygonShape shape;
 	shape.SetAsBox(sizeboxsim.x,sizeboxsim.y);
+	b2PolygonShape  polygonShape;
 	b2FixtureDef fixture;
 	fixture.shape = &shape;
-	fixture.density = 1.0f;
-	fixture.friction = 0.3f;
+	//fixture.density = 1.0f;
+	//fixture.friction = 0.3f;
 	body->CreateFixture(&fixture);
+	//body->ApplyForceToCenter(b2Vec2(1000, 0),true);
 	scene.addGraphics(rect);
 	scene.addGameObjects(*this);
 }

@@ -1,5 +1,45 @@
-﻿Build started 16.01.2015 18:19:13.
+﻿Build started 17.01.2015 15:52:00.
+     1>Project "D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Phoenix.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Phoenix Core.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\SFML-2.2\include" /I"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\boost\include" /I"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\Box2D\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Game.cpp testClass.cpp
+         Game.cpp
+     1>d:\documents\programming\c++\phoenix\phoenix\phoenix\game.cpp(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         testClass.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Phoenix.dll" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\boost\lib" /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\SFML-2.2\lib" /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\..\..\..\Third-party\Box2D\lib" Box2D.lib "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" winmm.lib ws2_32.lib gdi32.lib sndfile.lib freetype.lib glew.lib jpeg.lib openal32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Phoenix.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Phoenix.lib" /MACHINE:X86 /DLL Debug\Convertion.obj
+         Debug\Game.obj
+         Debug\testClass.obj
+         Debug\Tiledmap.obj
+         Debug\GameObject.obj
+         Debug\Keyboard.obj
+         Debug\Scene.obj
+         Debug\xml_parser.obj
+         Phoenix.vcxproj -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Phoenix.dll
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Phoenix.bsc" /n Debug\Convertion.sbr Debug\Game.sbr Debug\testClass.sbr Debug\Tiledmap.sbr Debug\GameObject.sbr Debug\Keyboard.sbr Debug\Scene.sbr Debug\xml_parser.sbr
+       PostBuildEvent:
+         RMDIR D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\include\Phoenix\ /S /Q
+         xcopy /s  "D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\*.h"  "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\include\Phoenix\"
+         xcopy /s  "D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\*.hpp"  "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\include\Phoenix\"
+         :VCEnd
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Convertion.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Game.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\GameObject.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Keyboard.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Scene.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\testClass.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Tiledmap.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Variables.h
+         D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\xml_parser.h
+         9 File(s) copied
+         File not found - *.hpp
+         0 File(s) copied
+     1>Done Building Project "D:\Documents\Programming\C++\Phoenix\Phoenix\Phoenix\Phoenix.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.01
+Time Elapsed 00:00:03.16

@@ -25,7 +25,7 @@ Player::Player(Phoenix::Scene& scene, float x, float y)
 	fixture.density = 1.0f;
 	fixture.friction = 100.f;
 	body->CreateFixture(&fixture);
-	//body->SetBullet(true);
+	body->SetBullet(true);
 
 	scene.addGraphics(rect);
 	scene.addGameObjects(*this);
