@@ -2,8 +2,6 @@
 #include <Phoenix\Game.h>
 #include <vector>
 #include <memory>
-#include "Box.h"
-#include "Player.h"
 class PlaygroundGame :
 	public Phoenix::Game
 {
@@ -15,8 +13,6 @@ protected:
 	int boxes = 0;
 	Phoenix::Tiledmap tile;
 	sf::Font font;
-	//Player pl;
-	std::vector<Box*> boxhell;
 	sf::Text fpsCounter;
 	sf::Text boxCounter;
 	void Update(float deltatime);

@@ -3,22 +3,15 @@
 #include <Phoenix\Tiledmap.h>
 #include <Phoenix\Scene.h>
 #include <Phoenix\testClass.h>
-#include "testClass.h"
 #include <string>
 
 PlaygroundGame::PlaygroundGame() : tile("Levels/LevelOne.lvl.tmx", scene)//, pl(scene, 100, 100)
 {
-	std::cout << "Playground created";
-	Phoenix::testClass tst(scene.getWorld());
-	testClass tst2(scene.getWorld());
 	font.loadFromFile("Fonts\\arial.ttf");
 	fpsCounter.setFont(font);
 	fpsCounter.setCharacterSize(30);
 	fpsCounter.setStyle(sf::Text::Regular);
-	boxCounter.setFont(font);
-	boxCounter.setCharacterSize(30);
-	boxCounter.setStyle(sf::Text::Regular);
-	boxCounter.setPosition(0, 30);
+
 	scene.addGraphics(tile);
 	scene.addGUIGraphics(fpsCounter);
 	scene.addGUIGraphics(boxCounter);
@@ -30,16 +23,8 @@ PlaygroundGame::~PlaygroundGame()
 {
 }
 void PlaygroundGame::Update(float deltatime){
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-	{
-		boxhell.push_back(new Box(scene, window.mapPixelToCoords(sf::Mouse::getPosition(window)).x,
-			window.mapPixelToCoords(sf::Mouse::getPosition(window)).y,
-			50, 50));
-		boxes++;
-	}
 	Game::Update(deltatime);
 	fpsCounter.setString("FPS:" + std::to_string(fps));
-	boxCounter.setString("Boxes:" + std::to_string(boxes));
 	fps = 60 / deltatime;
 
 
