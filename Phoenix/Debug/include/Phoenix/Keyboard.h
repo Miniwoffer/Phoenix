@@ -3,30 +3,32 @@
 *
 *  Created on: 18 Nov 2014
 *      Author: Odin Hultgren Van Der Horst
+*	
+*	Description:
+*		A set static functions that handels the keyboard input.
 */
 #pragma once
-#ifdef KEYBOARD_EXPORTS
-#define KEYBOARD_API __declspec(dllexport) 
-#else
-#define KEYBOARD_API __declspec(dllimport) 
-#endif
 
-#include <map>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Event.hpp>
 
+#include <map>
+
 namespace Phoenix{
-	enum KEYBOARD_API Keystate
+	enum __declspec(dllexport)  Keystate
 	{
-		NONE,
-		CLICKED,
-		KEYDOWN,
-		RELEASED
+		NONE,//Key is not active
+		CLICKED,//Key was pressed this frame
+		KEYDOWN,//Key is down
+		RELEASED//Key was released this frame
 	};
 	namespace Keyboard
 	{
-		KEYBOARD_API std::map<sf::Keyboard::Key, Keystate> keystate;
-		KEYBOARD_API void keyevent(sf::Event ev);
-		KEYBOARD_API void keyboardupdate();
+		//The keyevent handler called my the Game class
+		__declspec(dllexport)  void keyevent(sf::Event ev);
+		//Orders the keys to advance one fase, so clicked->keydown, and released->none.
+		__declspec(dllexport)  void keyboardupdate();
+		//a wrapper for the keyboard map so no one accidenly = when they want to == and ruin other parts of the code
+		__declspec(dllexport)  Keystate getKeyState(sf::Keyboard::Key key);
 	};
 }

@@ -1,37 +1,5 @@
-﻿Build started 17.01.2015 19:32:36.
-     1>Project "D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\GamePlayground.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\boost\include" /I"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\SFML-2.2\include" /I"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\Box2D\include" /ID:\Documents\Programming\C++\Phoenix\Phoenix\Debug\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt PlaygroundGame.cpp
-         PlaygroundGame.cpp
-     1>d:\documents\programming\c++\phoenix\phoenix\gameplayground\playgroundgame.cpp(29): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>d:\documents\programming\c++\phoenix\phoenix\gameplayground\playgroundgame.cpp(61): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\ /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\boost\lib" /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\SFML-2.2\lib" /LIBPATH:"D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\..\..\..\Third-party\Box2D\lib" Phoenix.lib Box2D.lib "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-network-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" winmm.lib ws2_32.lib gdi32.lib sndfile.lib freetype.lib glew.lib jpeg.lib openal32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.lib" /MACHINE:X86 Debug\Main.obj
-         Debug\PlaygroundGame.obj
-            Creating library D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.lib and object D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.exp
-         GamePlayground.vcxproj -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.exe
-       BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\GamePlayground.bsc" /n Debug\Main.sbr Debug\PlaygroundGame.sbr
-       PostBuildEvent:
-         RMDIR "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Images\" /S /Q
-         RMDIR "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels\" /S /Q
-         RMDIR "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Fonts\" /S /Q
-         xcopy  "D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Images "  "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Images\" /s/h/e/k/f/c
-         xcopy  "D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Levels "  "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels \" /s/h/e/k/f/c
-         xcopy  "D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Fonts "  "D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Fonts \" /s/h/e/k/f/c
-         :VCEnd
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Images\floor.png -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Images\floor.png
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Images\town_tiles.png -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Images\town_tiles.png
-         2 File(s) copied
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Levels\LevelOne.lvl.tmx -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels\LevelOne.lvl.tmx
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Levels\test.tmx -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels\test.tmx
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Levels\test.xml -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels\test.xml
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Levels\untitled.tmx -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Levels\untitled.tmx
-         4 File(s) copied
-         D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\Fonts\arial.ttf -> D:\Documents\Programming\C++\Phoenix\Phoenix\Debug\Fonts\arial.ttf
-         1 File(s) copied
-     1>Done Building Project "D:\Documents\Programming\C++\Phoenix\Phoenix\GamePlayground\GamePlayground.vcxproj" (Build target(s)).
+﻿Build started 21.01.2015 20:26:38.
 
 Build succeeded.
 
-Time Elapsed 00:00:02.61
+Time Elapsed 00:00:00.01

@@ -13,23 +13,20 @@
   <ItemGroup>
     <ClCompile Include="Convertion.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="testClass.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="Tiledmap.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="xml_parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="Convertion.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="testClass.h" />
     <ClInclude Include="Tiledmap.h" />
-    <ClInclude Include="Variables.h" />
-    <ClInclude Include="xml_parser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5B88D716-4AC3-43F8-8BC9-F093856BF23F}</ProjectGuid>
