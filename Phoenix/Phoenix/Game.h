@@ -3,24 +3,21 @@
 *
 *  Created on: 15 Nov 2014
 *      Author: Odin Hultgren Van Der Horst
+*
+*	Description:
+*		The class containing the main loop, the deltatimer, the camera and the render window.
 */
 #pragma once
-#ifdef GAME_EXPORTS
-#define GAME_API __declspec(dllexport) 
-#else
-#define GAME_API __declspec(dllimport) 
-#endif
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 
 #include <vector>
 #include <string>
 #include <iostream>
 #include <sstream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <vector>
 
-#include "Variables.h"
 #include "GameObject.h"
 #include "Keyboard.h"
 #include "Scene.h"
@@ -33,18 +30,16 @@ namespace Phoenix
 	public:
 		Game(int width = 900, int height = 600, int colordepth = 32, int target_fps = 6000, bool vSync = true, std::string windowName = "Phoenix", float gravityX = 0.f, float gravityY = 40.f);
 		virtual ~Game();
-		virtual void StartGameLoop();
+		virtual void StartGameLoop();//stars the gameloop
 		sf::RenderWindow window;
-		sf::View camera;
-		Scene scene;
-		//std::vector<Box*> boxhell;
+		sf::View camera;//the camera for the scene
+		Scene scene;//the current scene
 	private:
 		sf::Clock deltaClock;
-		sf::Clock timerClock;
 	protected:
-		bool run;
-		virtual void Update(float deltatime);
-		virtual void Draw();
-		virtual void WindowEvent(sf::Event ev);
+		bool run;//if set to true, the deltatime will be set to 0, physics and any gameobject using deltatime will stop moving.
+		virtual void Update(float deltatime);//the function that updates the scene
+		virtual void Draw();//the function that telles the scene to draw everything
+		virtual void WindowEvent(sf::Event ev);//The event handler for the window
 	};
 }

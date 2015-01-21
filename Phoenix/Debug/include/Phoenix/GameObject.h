@@ -3,13 +3,12 @@
 *
 *  Created on: 18 Nov 2014
 *      Author: Odin Hultgren Van Der Horst
+*
+*	Description:
+*		A simple sceletion for other objects to be built upon
 */
 #pragma once
-#ifdef GAMEOBJECT_EXPORTS
-#define GAMEOBJECT_API __declspec(dllexport) 
-#else
-#define GAMEOBJECT_API __declspec(dllimport) 
-#endif
+
 namespace Phoenix{
 	class __declspec(dllexport) GameObject
 	{

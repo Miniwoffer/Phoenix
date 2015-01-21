@@ -1,28 +1,25 @@
+//a temp test class
 #include "PlaygroundGame.h"
 
 #include <Phoenix\Tiledmap.h>
 #include <Phoenix\Scene.h>
-#include <Phoenix\testClass.h>
-#include "testClass.h"
+#include <Phoenix\Log.h>
 #include <string>
 
-PlaygroundGame::PlaygroundGame() : tile("Levels/LevelOne.lvl.tmx", scene)//, pl(scene, 100, 100)
+PlaygroundGame::PlaygroundGame() : tile(new Phoenix::Tiledmap("Levels/LevelOne.lvl.tmx", scene)),fpsCounter(new sf::Text()) //, pl(scene, 100, 100)
 {
-	std::cout << "Playground created";
-	Phoenix::testClass tst(scene.getWorld());
-	testClass tst2(scene.getWorld());
+	Phoenix::Log::debug("Debug text test \n this is a test \n lorem ipsum");
+	Phoenix::Log::error("Error text test \n this is a test \n lorem ipsum");
+	Phoenix::Log::warning("Warning text test \n this is a test \n lorem ipsum");
+
 	font.loadFromFile("Fonts\\arial.ttf");
-	fpsCounter.setFont(font);
-	fpsCounter.setCharacterSize(30);
-	fpsCounter.setStyle(sf::Text::Regular);
-	boxCounter.setFont(font);
-	boxCounter.setCharacterSize(30);
-	boxCounter.setStyle(sf::Text::Regular);
-	boxCounter.setPosition(0, 30);
+	fpsCounter->setFont(font);
+	fpsCounter->setCharacterSize(30);
+	fpsCounter->setStyle(sf::Text::Regular);
+
 	scene.addGraphics(tile);
 	scene.addGUIGraphics(fpsCounter);
 	scene.addGUIGraphics(boxCounter);
-
 }
 
 
@@ -30,37 +27,30 @@ PlaygroundGame::~PlaygroundGame()
 {
 }
 void PlaygroundGame::Update(float deltatime){
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-	{
-		boxhell.push_back(new Box(scene, window.mapPixelToCoords(sf::Mouse::getPosition(window)).x,
-			window.mapPixelToCoords(sf::Mouse::getPosition(window)).y,
-			50, 50));
-		boxes++;
-	}
 	Game::Update(deltatime);
-	fpsCounter.setString("FPS:" + std::to_string(fps));
-	boxCounter.setString("Boxes:" + std::to_string(boxes));
+
+	fpsCounter->setString("FPS:" + std::to_string(fps));
 	fps = 60 / deltatime;
 
 
 	float moveleng = 500 * deltatime;
-	if (Phoenix::Keyboard::keystate[sf::Keyboard::W] == Phoenix::Keystate::KEYDOWN)
+	if (Phoenix::Keyboard::getKeyState(sf::Keyboard::W) == Phoenix::Keystate::KEYDOWN)
 	{
 		camera.move(0, -moveleng);
 	}
-	if (Phoenix::Keyboard::keystate[sf::Keyboard::A] == Phoenix::Keystate::KEYDOWN)
+	if (Phoenix::Keyboard::getKeyState(sf::Keyboard::A) == Phoenix::Keystate::KEYDOWN)
 	{
 		camera.move(-moveleng, 0);
 	}
-	if (Phoenix::Keyboard::keystate[sf::Keyboard::S] == Phoenix::Keystate::KEYDOWN)
+	if (Phoenix::Keyboard::getKeyState(sf::Keyboard::S) == Phoenix::Keystate::KEYDOWN)
 	{
 		camera.move(0, moveleng);
 	}
-	if (Phoenix::Keyboard::keystate[sf::Keyboard::D] == Phoenix::Keystate::KEYDOWN)
+	if (Phoenix::Keyboard::getKeyState(sf::Keyboard::D) == Phoenix::Keystate::KEYDOWN)
 	{
 		camera.move(moveleng, 0);
 	}
-	if (Phoenix::Keyboard::keystate[sf::Keyboard::P] == Phoenix::Keystate::CLICKED)
+	if (Phoenix::Keyboard::getKeyState(sf::Keyboard::P) == Phoenix::Keystate::CLICKED)
 	{
 		run = !run;
 	}

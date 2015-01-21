@@ -3,51 +3,51 @@
 *
 *  Created on: 17 Nov 2014
 *      Author: Odin Hultgren Van Der Horst
+* Description:
+*		This is the class handels the update and draw function as well as storing the box2d World and pointers to Drawable objects.
 */
+
 #pragma once
-#ifdef SCENE_EXPORTS
-#define SCENE_API __declspec(dllexport) 
-#else
-#define SCENE_API __declspec(dllimport) 
-#endif
 
 #include <SFML/Graphics.hpp>
+
 #include <Box2D/Box2D.h>
+
+#include <vector>
+#include <memory>
 
 #include "Convertion.h"
 #include "GameObject.h"
-#include <vector>
+#include "Log.h"
 namespace Phoenix {
-	enum __declspec(dllexport) GraphicsLocation
-{
-	World,
-	WorldBottom,
-	GUI,
-	GUIBottom
-};
-	enum __declspec(dllexport) AddType
+
+enum __declspec(dllexport) AddType
 {
 	Top,
-	Bottom
+	Bottom,
+	Intersect
 };
 	class __declspec(dllexport) Scene {
 public:
 	Scene(float gravX,float gravY);
-	virtual ~Scene();
 	void Draw(sf::RenderWindow& window, sf::View view);
 	void Update(float gametime);
-	void addGameObjects(GameObject& object, AddType location = AddType::Top);
-	void addGraphics(sf::Drawable& object);
-	void addGUIGraphics(sf::Drawable& object);
-	b2Body* addPhysics(b2BodyDef object, AddType location = AddType::Top);
-	b2World* getWorld();
-private:
-	b2World* world;
-	std::vector<GameObject*> gameobjects;
-	std::vector<sf::Drawable*> GUIgraphics;
-	std::vector<sf::Drawable*> Debuggraphics;
-	std::vector<sf::Drawable*> graphics;
-};
+	void addGameObjects(const std::shared_ptr<GameObject> object, AddType location = AddType::Top, unsigned int pos = 0);
+	void addGraphics(const std::shared_ptr<sf::Drawable> object, AddType location = AddType::Top, unsigned int pos = 0);
+	void addGUIGraphics(const std::shared_ptr<sf::Drawable> object, AddType location = AddType::Top, unsigned int pos = 0);
+	b2Body* addPhysics(b2BodyDef& object);
 
+
+	private:
+	b2World world;
+	static void doDrawLoop(std::vector<std::shared_ptr<sf::Drawable>>& vec, sf::RenderWindow& window);
+
+	template <typename T>
+	static void addObjecToList(std::vector<std::shared_ptr<T>>& vec, std::shared_ptr<T> object, AddType location, unsigned int pos);
+
+	std::vector<std::shared_ptr<GameObject>> gameobjects;
+	std::vector<std::shared_ptr<sf::Drawable>> GUIgraphics;
+	std::vector<std::shared_ptr<sf::Drawable>> graphics;
+};
 }
 

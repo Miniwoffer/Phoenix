@@ -30,13 +30,10 @@
     <ClCompile Include="Tiledmap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="xml_parser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Convertion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testClass.cpp">
+    <ClCompile Include="Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,13 +56,7 @@
     <ClInclude Include="Tiledmap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Variables.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xml_parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testClass.h">
+    <ClInclude Include="Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,15 +18,12 @@
 const float SIMULATOINRATE = 0.05f;
 namespace Phoenix
 {
-	static int linenum = 0;
-	template <typename T>
-	__declspec(dllexport) void logAction(const T message);
-	__declspec(dllexport) sf::Vector2f bTOs(const b2Vec2 b2vec);
-	__declspec(dllexport) b2Vec2 sTOb(const sf::Vector2f sfvec2);
-	__declspec(dllexport) sf::Vector2f bTOs(const float x, const float y);
-	__declspec(dllexport) b2Vec2 sTOb(const float x, const float y);
-	__declspec(dllexport) float bTOs(const float x);
-	__declspec(dllexport) float sTOb(const float x);
-	__declspec(dllexport) float radianTorot(const float radian);
-	__declspec(dllexport) float totToradian(const float rot);
+	__declspec(dllexport) sf::Vector2f SimulationToWorld(const b2Vec2 b2vec);
+	__declspec(dllexport) b2Vec2 WorldToSimulation(const sf::Vector2f sfvec2);
+	__declspec(dllexport) sf::Vector2f SimulationToWorld(const float x, const float y);
+	__declspec(dllexport) b2Vec2 WorldToSimulation(const float x, const float y);
+	__declspec(dllexport) float SimulationToWorld(const float x);
+	__declspec(dllexport) float WorldToSimulation(const float x);
+	__declspec(dllexport) float RadianToRot(const float radian);
+	__declspec(dllexport) float RotToRadian(const float rot);
 }

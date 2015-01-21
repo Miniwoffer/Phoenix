@@ -13,26 +13,26 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
-namespace Phoenix{
-	enum VARIABLES_API Directions
-	{
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-		ALL
-	};
-	enum VARIABLES_API CollisionType
-	{
-		WORLD,
-		DESTRUCTIBLE,
-		PLAYER,
-		OTHER
-	};
-	struct VARIABLES_API Tile
-	{
-		sf::Sprite sprite;
-		int x;
-		int y;
-	};
-}
+//namespace Phoenix{
+//	enum VARIABLES_API Directions
+//	{
+//		UP,
+//		DOWN,
+//		LEFT,
+//		RIGHT,
+//		ALL
+//	};
+//	enum VARIABLES_API CollisionType
+//	{
+//		WORLD,
+//		DESTRUCTIBLE,
+//		PLAYER,
+//		OTHER
+//	};
+//	struct VARIABLES_API Tile
+//	{
+//		sf::Sprite sprite;
+//		int x;
+//		int y;
+//	};
+//}
