@@ -31,7 +31,7 @@
 
 namespace  Phoenix
 {
-	class __declspec(dllexport) Tiledmap : public sf::Drawable, sf::Transformable
+	class Tiledmap : public sf::Drawable, sf::Transformable
 	{
 	public:
 		Tiledmap(std::string filename, Scene& scene);

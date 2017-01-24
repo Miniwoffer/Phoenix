@@ -1,6 +1,6 @@
 //a temp test class
 #pragma once
-#include <Phoenix\Game.h>
+#include "../Phoenix/Game.h"
 #include <vector>
 #include <memory>
 class PlaygroundGame :

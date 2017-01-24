@@ -9,15 +9,14 @@
 
 #pragma once
 #include <iostream>
-#include <windows.h>
 #include <string>
 namespace Phoenix 
 {
 	namespace Log
 	{
-		__declspec(dllexport) void error(std::string message);
-		__declspec(dllexport) void debug(char* message);
-		__declspec(dllexport) void warning(char* message);
+		void error(std::string message);
+		void debug(char* message);
+		void warning(char* message);
 	};
 }
 

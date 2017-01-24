@@ -1,22 +1,23 @@
 //a temp test class
 #include "PlaygroundGame.h"
 
-#include <Phoenix\Tiledmap.h>
-#include <Phoenix\Scene.h>
-#include <Phoenix\Log.h>
+#include "../Phoenix/Tiledmap.h"
+#include "../Phoenix/Scene.h"
+#include "../Phoenix/Log.h"
 #include <string>
 
-PlaygroundGame::PlaygroundGame() : tile(new Phoenix::Tiledmap("Levels/LevelOne.lvl.tmx", scene)),fpsCounter(new sf::Text()) //, pl(scene, 100, 100)
+PlaygroundGame::PlaygroundGame() : tile(new Phoenix::Tiledmap("Levels/LevelOne.lvl.tmx", scene)),fpsCounter(new sf::Text()),boxCounter(new sf::Text()) //, pl(scene, 100, 100)
 {
-	Phoenix::Log::debug("Debug text test \n this is a test \n lorem ipsum");
-	Phoenix::Log::error("Error text test \n this is a test \n lorem ipsum");
-	Phoenix::Log::warning("Warning text test \n this is a test \n lorem ipsum");
-
-	font.loadFromFile("Fonts\\arial.ttf");
+	font.loadFromFile("Fonts/arial.ttf");
 	fpsCounter->setFont(font);
 	fpsCounter->setCharacterSize(30);
 	fpsCounter->setStyle(sf::Text::Regular);
 
+	boxCounter->setFont(font);
+	boxCounter->setCharacterSize(30);
+	boxCounter->setStyle(sf::Text::Regular);
+	boxCounter->setPosition(0,40);
+	
 	scene.addGraphics(tile);
 	scene.addGUIGraphics(fpsCounter);
 	scene.addGUIGraphics(boxCounter);
@@ -30,6 +31,7 @@ void PlaygroundGame::Update(float deltatime){
 	Game::Update(deltatime);
 
 	fpsCounter->setString("FPS:" + std::to_string(fps));
+	boxCounter->setString("no boxses :(");
 	fps = 60 / deltatime;
 
 

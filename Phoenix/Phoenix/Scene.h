@@ -21,13 +21,13 @@
 #include "Log.h"
 namespace Phoenix {
 
-enum __declspec(dllexport) AddType
+enum AddType
 {
 	Top,
 	Bottom,
 	Intersect
 };
-	class __declspec(dllexport) Scene {
+	class Scene {
 public:
 	Scene(float gravX,float gravY);
 	void Draw(sf::RenderWindow& window, sf::View view);

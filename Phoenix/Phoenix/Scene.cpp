@@ -74,7 +74,7 @@ namespace Phoenix {
 	{
 		if (!object)
 		{
-			Log::error("GameObject or Drawable not instantiated,\nfailed to add it to the scene!");
+			Log::error("GameObject or Drawable not instantiated,\nfailed to add it to the scene!(Scene.cpp)");
 		}
 		else
 		{
@@ -89,6 +89,7 @@ namespace Phoenix {
 			case Intersect:
 				itr += pos;
 				break;
+			default:break;
 			}
 			vec.insert(itr, object);
 		}

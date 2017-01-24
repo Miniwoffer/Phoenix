@@ -25,7 +25,7 @@
 #include "Tiledmap.h"
 namespace Phoenix
 {
-	class __declspec(dllexport) Game
+	class Game
 	{
 	public:
 		Game(int width = 900, int height = 600, int colordepth = 32, int target_fps = 6000, bool vSync = true, std::string windowName = "Phoenix", float gravityX = 0.f, float gravityY = 40.f);

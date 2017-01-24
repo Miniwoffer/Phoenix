@@ -10,7 +10,7 @@
 #pragma once
 
 namespace Phoenix{
-	class __declspec(dllexport) GameObject
+	class GameObject
 	{
 	public:
 		GameObject();
