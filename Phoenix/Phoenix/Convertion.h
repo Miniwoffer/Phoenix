@@ -22,17 +22,17 @@ const float SIMULATOINRATE = 0.05f;
 namespace Phoenix
 {
 	//convert from simulation uints(box2d) to pixel units(sfml)
-	__declspec(dllexport) sf::Vector2f SimulationToWorld(const b2Vec2 b2vec);
-	__declspec(dllexport) sf::Vector2f SimulationToWorld(const float x, const float y);
-	__declspec(dllexport) float SimulationToWorld(const float x);
+	sf::Vector2f SimulationToWorld(const b2Vec2 b2vec);
+	sf::Vector2f SimulationToWorld(const float x, const float y);
+	float SimulationToWorld(const float x);
 
 	//convert from pixel units(sfml) to simulation uints(box2d)
-	__declspec(dllexport) b2Vec2 WorldToSimulation(const float x, const float y);
-	__declspec(dllexport) b2Vec2 WorldToSimulation(const sf::Vector2f sfvec2);
-	__declspec(dllexport) float WorldToSimulation(const float x);
+	b2Vec2 WorldToSimulation(const float x, const float y);
+	b2Vec2 WorldToSimulation(const sf::Vector2f sfvec2);
+	float WorldToSimulation(const float x);
 
 	//convert from radian to rotation
-	__declspec(dllexport) float RadianToRot(const float radian);
+	float RadianToRot(const float radian);
 	//converts from rotation to radian
-	__declspec(dllexport) float RotToRadian(const float rot);
+	float RotToRadian(const float rot);
 }
